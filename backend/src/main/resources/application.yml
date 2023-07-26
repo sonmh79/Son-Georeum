@@ -56,7 +56,7 @@ logging:
       bbb: debug
 
 # openVidu Environmental Variables
-OPENVIDU_URL: https://i8b106.p.ssafy.io:8443
+OPENVIDU_URL: https://t0911.p.ssafy.io:8443
 OPENVIDU_SECRET: ${OPENVIDU_SECRET}
 
 # jwt secret key
