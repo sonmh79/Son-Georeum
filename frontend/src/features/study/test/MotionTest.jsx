@@ -27,7 +27,7 @@ const MotionTest = ({ categoryNum, startCorrect }) => {
     Websocket Connect
   */
       if (categoryNum === -1) categoryNum = 3;
-      let url = `wss://i8b106.p.ssafy.io/ws/socket-server/${categoryNum}`;
+      let url = `wss://son-georeum.com/ws/socket-server/${categoryNum}`;
 
       const handSocket = new WebSocket(url);
       let status = false;

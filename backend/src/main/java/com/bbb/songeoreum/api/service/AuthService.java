@@ -44,23 +44,23 @@ public class AuthService {
     private static final String SUCCESS = "success";
     private static final String FAIL = "fail";
 
-    @Value("${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_KAKAO_CLIENTID}")
-//    @Value("${spring.security.oauth2.client.registration.kakao.client-id}")
+//    @Value("${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_KAKAO_CLIENTID}")
+    @Value("${spring.security.oauth2.client.registration.kakao.client-id}")
     private String KAKAO_CLIENT_ID;
 
-    @Value("${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_KAKAO_CLIENTSECRET}")
+//    @Value("${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_KAKAO_CLIENTSECRET}")
 //    @Value("${spring.security.oauth2.client.registration.kakao.client-secret}")
-    private String KAKAO_CLIENT_SECRET;
+//    private String KAKAO_CLIENT_SECRET;
 
-    @Value("${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_KAKAO_REDIRECTURI}")
-//    @Value("${spring.security.oauth2.client.registration.kakao.redirect-uri}")
+//    @Value("${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_KAKAO_REDIRECTURI}")
+    @Value("${spring.security.oauth2.client.registration.kakao.redirect-uri}")
     private String KAKAO_REDIRECT_URI;
 
     @Value("${spring.security.oauth2.client.provider.kakao.token-uri}")
     private String KAKAO_TOKEN_URI;
 
     @Value("${spring.security.oauth2.client.provider.kakao.user-info-uri}")
-    private String KAKO_USER_INFO_URI;
+    private String KAKAO_USER_INFO_URI;
 
 
     private final UserRepository userRepository;
@@ -86,7 +86,7 @@ public class AuthService {
             StringBuilder sb = new StringBuilder();
             sb.append("grant_type=authorization_code");
             sb.append("&client_id=" + KAKAO_CLIENT_ID);
-            sb.append("&client_secret=" + KAKAO_CLIENT_SECRET);
+//            sb.append("&client_secret=" + KAKAO_CLIENT_SECRET);
             sb.append("&redirect_uri=" + KAKAO_REDIRECT_URI);
             sb.append("&code=" + code);
 
@@ -201,7 +201,7 @@ public class AuthService {
         User user = null;
 
         try {
-            URL url = new URL(KAKO_USER_INFO_URI);
+            URL url = new URL(KAKAO_USER_INFO_URI);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Authorization", "Bearer " + kakaoAccessToken);
