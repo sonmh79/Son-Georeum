@@ -15,7 +15,7 @@ spring:
             client-secret: ${CLIENT_SECRET}
             client-name: kakao
             authorization-grant-type: authorization_code
-            redirect-uri: http://localhost:8080/api/login/oauth2/code/kakao
+            redirect-uri: http://son-georeum.com/api/login/oauth2/code/kakao
             client-authentication-method: POST
             scope:
               - profile_nickname
@@ -70,4 +70,4 @@ app:
     token-expiry: 1800000 # 30분
     refresh-token-expiry: 604800000 # 7일
   oauth2:
-    authorized-redirect-uris: http://localhost:3000/oauth2/code/kakao
+    authorized-redirect-uris: http://son-georeum.com/oauth2/code/kakao
