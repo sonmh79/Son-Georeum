@@ -49,8 +49,8 @@ public class AuthService {
     private String KAKAO_CLIENT_ID;
 
 //    @Value("${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_KAKAO_CLIENTSECRET}")
-//    @Value("${spring.security.oauth2.client.registration.kakao.client-secret}")
-//    private String KAKAO_CLIENT_SECRET;
+    @Value("${spring.security.oauth2.client.registration.kakao.client-secret}")
+    private String KAKAO_CLIENT_SECRET;
 
 //    @Value("${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_KAKAO_REDIRECTURI}")
     @Value("${spring.security.oauth2.client.registration.kakao.redirect-uri}")
@@ -86,7 +86,7 @@ public class AuthService {
             StringBuilder sb = new StringBuilder();
             sb.append("grant_type=authorization_code");
             sb.append("&client_id=" + KAKAO_CLIENT_ID);
-//            sb.append("&client_secret=" + KAKAO_CLIENT_SECRET);
+            sb.append("&client_secret=" + KAKAO_CLIENT_SECRET);
             sb.append("&redirect_uri=" + KAKAO_REDIRECT_URI);
             sb.append("&code=" + code);
 
