@@ -15,7 +15,7 @@ spring:
             client-secret: ${CLIENT_SECRET}
             client-name: kakao
             authorization-grant-type: authorization_code
-            redirect-uri: http://son-georeum.com/api/login/oauth2/code/kakao
+            redirect-uri: https://son-georeum.com/api/login/oauth2/code/kakao
             client-authentication-method: POST
             scope:
               - profile_nickname
